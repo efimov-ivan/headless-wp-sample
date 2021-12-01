@@ -18,7 +18,7 @@ function Header({
   }).nodes;
 
   return (
-    <header>
+    <header className="sticky">
       <div className={styles.wrap}>
         <div className={styles['title-wrap']}>
           <p className={styles['site-title']}>
@@ -37,12 +37,12 @@ function Header({
                 </Link>
               </li>
             ))}
+
             <li>
-              <Link href="https://github.com/wpengine/faustjs">
+              <Link href="/gallery">
                 <a
-                  className="button"
-                  href="https://github.com/wpengine/faustjs">
-                  GitHub
+                  className="button">
+                  Gallery
                 </a>
               </Link>
             </li>

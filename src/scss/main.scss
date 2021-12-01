@@ -3,6 +3,10 @@
 @import "variables";
 @import "typography";
 
+html{
+	scroll-behavior: smooth;
+}
+
 body {
 	color: $color-black;
 	font-size: 18px;
@@ -14,6 +18,14 @@ body {
 	max-width: $content-width;
 	overflow: auto;
 	padding: 0 10px;
+}
+
+.sticky{
+	position: sticky;
+	top: 0;
+	background: #fff;
+	z-index: 10;
+	box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 20%);
 }
 
 .content-page .wrap,
@@ -77,4 +89,31 @@ body {
 
 .pagination-next {
 	text-align: right;
+}
+
+figure{
+	margin: 0;
+}
+
+.wp-block-columns{
+	display: flex;
+
+	> .wp-block-column{
+		flex-basis: 0;
+		flex-grow: 1;
+		margin-left: 25px;
+
+		&:first-child{
+			margin-left: 0;
+		}
+	}
+}
+
+img{
+	max-width: 100%;
+	height: auto;
+}
+
+.has-text-align-center{
+	text-align: center;
 }
