@@ -1,8 +1,12 @@
+import { getNextStaticProps } from '@faustjs/next';
+
+import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import { Footer, Header, Hero } from 'components';
 import { client } from '../client';
 import Image from 'next/image'
-export default function Team() {
+
+export default function Page() {
   const { useQuery } = client;
   const { generalSettings } = client.useQuery();
   const gallery = useQuery().allGallery()?.nodes;
@@ -42,4 +46,11 @@ export default function Team() {
       <Footer copyrightHolder={generalSettings.title} />
     </>
   );
+}
+
+export async function getStaticProps(context: GetStaticPropsContext) {
+  return getNextStaticProps(context, {
+    Page,
+    client,
+  });
 }
