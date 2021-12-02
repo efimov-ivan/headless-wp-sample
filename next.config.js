@@ -5,7 +5,10 @@ const imageConfig = {
     domains: ['localhost']
   }
 }
+
 /**
  * @type {import('next').NextConfig}
  **/
-module.exports = withFaust(imageConfig);
+
+// module.exports = withFaust(imageConfig);
+module.exports = withFaust();
